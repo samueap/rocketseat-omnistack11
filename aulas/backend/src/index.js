@@ -1,8 +1,12 @@
 const express = require ('express');
+const routes = require ('./routes');
 
 const app = express();
 
 app.use(express.json());
+app.use(routes);
+
+app.listen(3333)
 
 /**
  * Rota/  Recurso
@@ -16,14 +20,9 @@ app.use(express.json());
   * PUT: Alterar um informação no back-end
   * DELETE: Deletar uma infomação no back-end
   */
-app.post('/users',(request, response) => {
-    return response.json({
-        evento: 'Semana OmniStack 11',
-        Aluno: 'Samuel Augusto'        
-    });
-}); 
 
-app.listen(3333)
+
+
 /**
  * Tipo de Parâmetros:
  * 
